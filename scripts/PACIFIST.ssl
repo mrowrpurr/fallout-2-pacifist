@@ -1,0 +1,16 @@
+#include "define.h"
+#include "command.h"
+
+#define NAME SCRIPT_PACIFIST
+
+#define LVAR_WAITING 0
+#define LVAR_FOLLOW_DISTANCE 1
+
+procedure critter_p_proc begin
+    party_member_follow_dude
+end
+
+procedure look_at_p_proc begin
+    script_overrides;
+    display_msg("You are looking at a pacifist.");
+end

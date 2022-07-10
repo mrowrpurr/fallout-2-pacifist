@@ -1,0 +1,14 @@
+#include "define.h"
+#include "command.h"
+
+procedure start begin
+    if game_loaded then begin
+        variable pacifist = create_object_sid(PID_VAULT_13_FEMALE, 0, 0, SCRIPT_PACIFIST);
+        party_add(pacifist);
+
+        // Will this make the follower a pacifist?
+        critter_add_trait(pacifist, TRAIT_OBJECT, OBJECT_AI_PACKET, AI_CHILD);     
+        
+        critter_attempt_placement(pacifist, dude_tile, dude_elevation);
+    end
+end
